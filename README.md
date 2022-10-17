@@ -31,28 +31,28 @@ Name:Akkireddy Ruchitha Reddy
 Regiter Number:212221230004
 ```
 ```
-const int motorPin1 = 5;
-const int motorPin2 = 6;
+const int motorIn1 = 5;  
+const int motorIn2 =6;
 
 void setup(){
-  pinMode(motorPin1, OUTPUT);
-  pinMode(motorPin2, OUTPUT);
+  pinMode(motorIn1, OUTPUT);
+  pinMode(motorIn2, OUTPUT);
 }
 void loop(){
- clockwise(255);
+  clockwise(255);
   delay(3000);
   counterClockwise(64);
   delay(3000);
 }
 void counterClockwise(int Speed)
 {
-  analogWrite(motorPin1,Speed);
-  analogWrite(motorPin2,0);
+  analogWrite(motorIn1,Speed);
+  analogWrite(motorIn2,0);
 }
 void clockwise(int Speed)
 {
-  analogWrite(motorPin1,0);
-  analogWrite(motorPin2,Speed);
+  analogWrite(motorIn1,0);
+  analogWrite(motorIn2,Speed);
 }
 ```
 
