@@ -31,33 +31,70 @@ Name:Akkireddy Ruchitha Reddy
 Regiter Number:212221230004
 ```
 ```
-const int motorIn1 = 5;  
-const int motorIn2 =6;
-
+## Normal RPM:
+// C++ code
+//l293D
+const int motorPin1 = 5;//pin 14 of L293
+const int motorPin2 = 6;//pin 10 of L293
+// this will run only one time
 void setup(){
-  pinMode(motorIn1, OUTPUT);
+  //set pins as output
+  pinMode(motorPin1,OUTPUT);
+  pinMode(motorPin2, OUTPUT);
+}
+void loop(){
+  digitalWrite(motorPin1,LOW);
+  delay(2000);
+  digitalWrite(motorPin2,HIGH);
+  delay(2000);
+}
+## To Control RPM:
+
+// C++ code
+//l293D
+
+#define motorIn1  5//pin 14 of L293
+#define motorIn2  6//pin 10 of L293
+// this will run only one time
+void setup(){
+  //set pins as output
+  pinMode(motorIn1,OUTPUT);
   pinMode(motorIn2, OUTPUT);
 }
 void loop(){
-  clockwise(255);
-  delay(3000);
-  counterClockwise(64);
+  //pulse width modulation(pwm)
+  clockwise(0);
+  delay(5000);
+  counterClockwise(50);
   delay(3000);
 }
 void counterClockwise(int Speed)
 {
   analogWrite(motorIn1,Speed);
   analogWrite(motorIn2,0);
+  
 }
 void clockwise(int Speed)
 {
-  analogWrite(motorIn1,0);
-  analogWrite(motorIn2,Speed);
+    analogWrite(motorIn1,0);
+      analogWrite(motorIn2,Speed);
+ //delay(5);
 }
+
+
+
 ```
 
 ### OUTPUT
-![output](https://github.com/RuchithaReddy28/Experiment-no-7-DC-Motor-Speed-Control-Using-Arduino/blob/main/circult.png?raw=true)
+![output](?raw=true)
+### Graph and Tabulation:
+## Clockwise:
+![output](?raw=true)
+
+## Counter clockwise:
+
+![output](?raw=true)
 
 ### RESULTS AND DISCUSSION 
+Thus, the speed and the direction of a DC motor using L293D driver ic( H- bridge) is controlled.
 
